@@ -10,6 +10,11 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.core.urlresolvers import reverse_lazy
+
+LOGIN_URL=reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+LOGOUT_URL=reverse_lazy('logout')
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -38,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'links',
     'hnews',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
